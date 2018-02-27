@@ -1,0 +1,19 @@
+<h2>Awards</h2>
+
+<% @awards.each do |award| %>
+  <%= award.title %><br>
+<% end %>
+
+
+<p>
+  <% if current_user.admin? %>
+    <%= form_for @award do |f| %>
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+      <%= f.submit %>
+    <% end %>
+  <% else %>
+    
+  <% end %>
+</p>
+
